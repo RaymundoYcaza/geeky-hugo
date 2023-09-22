@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <!-- Google CSE Code -->
+        <script async src="https://cse.google.com/cse.js?cx=9356e5aae3ce340ae"></script>
+<div class="gcse-search"></div>
+
+      <!-- Sidebar widgets -->
+      <aside class="col-lg-4">
+        {{ $widget := site.Params.widgets.sidebar }}
+        {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" . )}}
+      </aside>
+    </div>
+  </div>
+</section>
+
+{{ "<!-- Search index -->" | safeHTML }}
+<script>
+  var indexURL = {{"index.json" | relLangURL}}
+</script>
+
+{{ end }}

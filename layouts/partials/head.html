@@ -1,0 +1,76 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNQXNMRNBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PNQXNMRNBD');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9965740454699088"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8">
+<meta name="robots" content="INDEX, FOLLOW">
+<title>{{.Title | default site.Title}}</title>
+
+<base href="{{ .Site.BaseURL }}">
+
+<!-- multilingual SEO optimizations -->
+{{ if .IsTranslated }}
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{.Lang}}" href="{{ .RelPermalink | absLangURL }}">
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ .RelPermalink | absLangURL }}">
+{{ end }}
+
+<!-- mobile responsive meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<!-- theme meta -->
+<meta name="theme-name" content="geeky-hugo" />
+<meta name="description" content="{{ .Params.Description | default site.Params.description }}">
+{{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+
+
+{{ partialCached "manifest" . }}
+
+<!-- site verifications -->
+{{ partialCached "site-verifications.html" . }}
+
+
+<!-- opengraph and twitter card -->
+{{ partial "basic-seo.html" . }}
+
+
+<!-- custom script -->
+{{ site.Params.custom_script | safeHTML}}
+
+
+<!-- google analytics -->
+{{ template "_internal/google_analytics.html" . }}
+
+
+<!-- google tag manager -->
+{{ partialCached "gtm.html" . }}
+
+
+<!-- matomo analytics -->
+{{ partialCached "matomo-analytics.html" . }}
+
+
+<!--  Baidu analytics -->
+{{ partialCached "baidu-analytics.html" . }}
+
+
+<!-- Plausible Analytics -->
+{{ partialCached "plausible-analytics.html" . }}
+
+
+<!-- Counter Analytics -->
+{{ partialCached "counter-analytics.html" . }}
+
+
+<!-- Crisp Chat -->
+{{ partialCached "crisp-chat.html" . }}
