@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 <!--=================== banner section start ===================-->
 {{ with site.Params.banner }}
 {{ if .enable }}
@@ -191,17 +189,5 @@
   </div>
 </section>
 <!--=================== blog section end ===================-->
-
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 
 {{ end }}

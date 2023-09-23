@@ -2,8 +2,8 @@
 backend:
   name: git-gateway # Use the Git Gateway interface for local testing
   branch: master # Branch to update (optional; defaults to master)
-display_url: https://earnonlinemoney.org
-site_url: https://earnonlinemoney.org
+display_url: https://bisstox.com
+site_url: https://bisstox.com
 
   ### enable below lines for github integration ###
   # name: github

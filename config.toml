@@ -31,7 +31,7 @@ font_size = "15px" # default is 16px
 # "augmentedFourth": 1.414,
 # "perfectFifth": 1.5,
 # "goldenRatio": 1.618
-font_scale = "1.3" # default is "majorThird": 1.25
+font_scale = "1.25" # default is "majorThird": 1.25
 
 # Give your font name from google font. add font weight using ":wght@" and separate by ";"
 # example: "Work Sans:wght@400;500;600"
@@ -42,7 +42,7 @@ font_secondary_type = "sans-serif"                # [serif/sans-serif]
 font_icon = "Font Awesome 6 Free"
 
 ############################# Plugins ##############################
-
+ 
 # CSS Plugins
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/brands.css"
